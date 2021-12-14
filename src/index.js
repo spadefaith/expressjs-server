@@ -1,10 +1,9 @@
+const path = require('path');
 const express = require('express');
 const app = express();
 const port = 7845;
 
-app.use('/', function(req, res, next){
-    res.json({message:'hello world'});
-});
+app.use('/', express.static(path.join(__dirname, '/public')));
 
 app.listen(port, function(err){
     if (err){
